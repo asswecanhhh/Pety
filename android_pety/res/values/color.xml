@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>   
+<resources>   
+<color name="lightgree">#43b7ae</color><!--浅绿 -->   
+<color name="gree">#0ca498</color><!--绿 -->   
+<color name="gray">#cFcFcF</color><!--灰-->   
+<color name="alphagray">#7fe3e3e3</color><!--半透灰 -->   
+<color name="alpha">#00FFFFFF</color><!--全透明 -->   
+<color name="alphawhite1to4">#3eFFFFFF</color><!--4分1透明白 -->   
+<color name="alphablack1to4">#3e000000</color><!--4分1透明黑 -->   
+<color name="alphablue">#962894ff</color><!--10分7透明蓝 -->
+<color name="blue">#2894ff</color><!--蓝 -->
+<color name="lightblue">#46a3ff</color><!--浅蓝 -->
+<color name="alphaskyblue">#be5ab6de</color><!--alpha天空蓝 -->
+<color name="alphalightblue">#be46a3ff</color><!--alpha浅蓝 -->
+<color name="alphaorange90">#ef8652</color><!--5分3橙 -->
+   
+</resources>   

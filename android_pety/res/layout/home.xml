@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_background"
+    android:orientation="vertical"
+    android:padding="20dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="2.5dp"
+            android:paddingRight="2.5dp"
+            android:layout_margin="2.5dp"
+            android:orientation="vertical"
+            android:layout_weight="1" >
+			
+            <ImageButton
+                android:id="@+id/home_news"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="10dp"
+                android:paddingTop="5dp"
+                android:src="@drawable/py_message"
+                android:scaleType="centerInside"
+                android:background="@drawable/style_selector_button_alpha"/> 
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                   	android:gravity="bottom|center_horizontal"
+                   	android:paddingBottom="5dp"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:text="宠物资讯"/>  
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="2.5dp"
+            android:layout_weight="1" >
+
+            <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="2.5dp"
+            android:orientation="vertical"
+            android:layout_weight="1" >
+			
+            <ImageButton
+                android:id="@+id/home_me"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="5dp"
+                android:paddingBottom="25dp"
+                android:src="@drawable/py_me"
+                android:scaleType="centerInside"
+                android:background="@drawable/style_selector_button_alpha"/> 
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                   	android:gravity="bottom|center_horizontal"
+                   	android:paddingBottom="5dp"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:text="个人信息"/>  
+        </RelativeLayout>
+            <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="2.5dp"
+            android:orientation="vertical"
+            android:layout_weight="1" >
+			
+            <ImageButton
+                android:id="@+id/home_mypet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="20dp"
+                android:paddingTop="5dp"
+                android:src="@drawable/py_pet"
+                android:scaleType="centerInside"
+                android:background="@drawable/style_selector_button_alpha"/> 
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                   	android:gravity="bottom|center_horizontal"
+                   	android:paddingBottom="5dp"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:text="个人宠物"/>  
+        </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="2.5dp"
+            android:layout_weight="1" >
+
+            <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="2.5dp"
+            android:orientation="vertical"
+            android:layout_weight="1" >
+			
+            <ImageButton
+                android:id="@+id/home_salepet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="20dp"
+                android:paddingTop="5dp"
+                android:src="@drawable/py_salepet"
+                android:scaleType="centerInside"
+                android:background="@drawable/style_selector_button_alpha"/> 
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                   	android:gravity="bottom|center_horizontal"
+                   	android:paddingBottom="5dp"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:text="宠物销售"/>  
+        </RelativeLayout>
+            <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="2.5dp"
+            android:orientation="vertical"
+            android:layout_weight="1" >
+			
+            <ImageButton
+                android:id="@+id/home_saleproduct"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="20dp"
+                android:paddingTop="5dp"
+                android:src="@drawable/py_product"
+                android:scaleType="centerInside"
+                android:background="@drawable/style_selector_button_alpha"/> 
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                   	android:gravity="bottom|center_horizontal"
+                   	android:paddingBottom="5dp"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:text="宠物物品"/>  
+        </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="2.5dp"
+            android:layout_weight="1" >
+
+            <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="2.5dp"
+            android:orientation="vertical"
+            android:layout_weight="1" >
+			
+            <ImageButton
+                android:id="@+id/home_discuz"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="25dp"
+                android:paddingTop="5dp"
+                android:src="@drawable/py_discuz"
+                android:scaleType="centerInside"
+                android:background="@drawable/style_selector_button_alpha"/> 
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                   	android:gravity="bottom|center_horizontal"
+                   	android:paddingBottom="5dp"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:text="论    坛"/>  
+        </RelativeLayout>
+           <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="2.5dp"
+            android:orientation="vertical"
+            android:layout_weight="1" >
+			
+            <ImageButton
+                android:id="@+id/home_setting"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="20dp"
+                android:paddingTop="5dp"
+                android:src="@drawable/py_setting"
+                android:scaleType="centerInside"
+                android:background="@drawable/style_selector_button_alpha"/> 
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                   	android:gravity="bottom|center_horizontal"
+                   	android:paddingBottom="5dp"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:text="设   置"/>  
+        </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

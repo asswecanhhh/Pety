@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/blue"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/mypet_back"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/icon_back" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="个人宠物"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/mypet_add"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/py_add" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/mypet_loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ProgressBar
+                android:id="@+id/login_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left" />
+
+            <TextView
+                android:id="@+id/login_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="正在非常努力加载中(｡˘•ε•˘｡) " />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/mypet_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

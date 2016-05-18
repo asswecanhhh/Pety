@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/blue"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/post_back"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/icon_back" />
+
+            <TextView
+                android:id="@+id/post_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="贴子主题"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/loading_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ProgressBar
+                android:id="@+id/loading_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left" />
+
+            <TextView
+                android:id="@+id/loading_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="正在非常努力加载中(｡˘•ε•˘｡) " />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/post_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+        </ListView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/post_text"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:hint="回复" />
+
+            <Button
+                android:id="@+id/post_send"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/style_selector_button_blue"
+                android:text="发送"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
