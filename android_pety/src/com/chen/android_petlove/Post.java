@@ -42,10 +42,11 @@ public class Post extends Activity{
 	private Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what == 0x234){
-				title.setText((CharSequence) listItems.get(0).get("postName"));
 				loading.setVisibility(View.GONE);
+				title.setText((CharSequence) listItems.get(0).get("postName"));
 				postAdapter = new PostAdapter(Post.this, listItems);
 				list.setAdapter(postAdapter);
+				postAdapter.notifyDataSetChanged();
 			}
 		};
 	};
@@ -106,8 +107,35 @@ public class Post extends Activity{
 				Send s = new Send(Post.this, text.getText().toString(), postId);
 				com.chen.android_petlove.form.Discuz d = new Discuz();
 				s.Commit();
+				text.setText("");
 				Quer q = new Quer(Post.this);
 				q.updateDiscuz(postId);
+				
+				q = new Quer(Post.this);
+				listComment.clear();
+				listItems.clear();
+				q.getAllComment(postId, listComment, 20, 0);
+				new Thread(new Runnable() {
+					
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						while(listComment.size() == 0);
+						for(int i = 0; i < listComment.size(); i++){
+							Map<String, Object> map = new HashMap<String, Object>();
+							map.put("postName", listComment.get(i).getPost().getTitle());
+							map.put("title", listComment.get(i).getAuthor().getName());
+							map.put("info", listComment.get(i).getContent());
+							map.put("floor", i+1);
+							map.put("createAt", listComment.get(i).getCreatedAt());
+							listItems.add(map);
+						}
+						while(listItems.size() == 0);
+						Message msg = Message.obtain();
+						msg.what = 0x234;
+						handler.sendMessage(msg);
+					}
+				}).start();
 			}
 		});
 		

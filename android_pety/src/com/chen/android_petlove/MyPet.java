@@ -42,6 +42,7 @@ public class MyPet extends Activity {
 				loading.setVisibility(View.GONE);
 				myAdapter = new MyPetAdapter(MyPet.this,listItemsmain);
 				listView.setAdapter(myAdapter);
+				myAdapter.notifyDataSetChanged();
 			} else if(msg.what == 0x321){
 				System.out.println("handler");
 				bar.setVisibility(View.GONE);
@@ -68,27 +69,27 @@ public class MyPet extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.mypet);
-		
+
 		MyToastBlue.makeText(this, "正在很努力的加载数据中..", Toast.LENGTH_LONG).show();
-		
-		
+
+
 		back = (Button) findViewById(R.id.mypet_back);
 		add =(Button) findViewById(R.id.mypet_add);
 		listView = (ListView) findViewById(R.id.mypet_list);
 		loading = (LinearLayout) findViewById(R.id.mypet_loading);
 		text = (TextView) findViewById(R.id.login_text);
 		bar = (ProgressBar) findViewById(R.id.login_bar);
-		
-		
+
+
 		host = BmobUser.getCurrentUser(this,User.class);
-		
+
 		new Thread(new Runnable() {
-			
+
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
 				while(host == null);
-				Quer q = new Quer(getApplicationContext());
+				Quer q = new Quer(MyPet.this);
 				q.getPet(host.getObjectId(), petList);
 				Message msg = Message.obtain();
 				while(petList.size() == 0){
@@ -116,18 +117,18 @@ public class MyPet extends Activity {
 					listItems.add(map);
 				}
 				listItemsmain = listItems;
-				
+
 				while(listItemsmain.size() == 0){
 				}
-				
+
 				msg.what = 0x123;
 				handler.sendMessage(msg);
-				
+
 			}
 		}).start();
-		
-		
-		
+
+
+
 
 		back.setOnClickListener(new OnClickListener() {
 
@@ -149,5 +150,57 @@ public class MyPet extends Activity {
 				overridePendingTransition(R.anim.fade, R.anim.hold);
 			}
 		});
+	}
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				while(host == null);
+				Quer q = new Quer(getApplicationContext());
+				q.getPet(host.getObjectId(), petList);
+				Message msg = Message.obtain();
+				petList.clear();
+				while(petList.size() == 0){
+					if(q.getFlag() == -1){
+						msg.what = 0x321;
+						System.out.println("msg 0x321");
+						handler.sendMessage(msg);
+						break;
+					}
+				};
+				listItemsmain.clear();
+				List<Map<String, Object>> listItems = new ArrayList<Map<String,Object>>();
+				for(int i = 0; i < petList.size();i++){
+					Map<String, Object> map = new HashMap<String, Object>();
+					map.put("image", image[0]);
+					map.put("objectId", petList.get(i).getObjectId());
+					map.put("name", petList.get(i).getName());
+					map.put("type", petList.get(i).getType());
+					map.put("id", petList.get(i).getObjectId());
+					map.put("weight", String.valueOf(petList.get(i).getWeight()));
+					map.put("character", petList.get(i).getCharacter());
+					map.put("age", String.valueOf(petList.get(i).getAge()));
+					map.put("sex", petList.get(i).getSex());
+					map.put("note", petList.get(i).getNote());
+					map.put("picId", petList.get(i).getPicId());
+					listItems.add(map);
+				}
+				listItemsmain = listItems;
+
+				while(listItemsmain.size() == 0){
+				}
+
+				msg.what = 0x123;
+				handler.sendMessage(msg);
+				q.setFlag(0);
+
+			}
+		}).start();
 	}
 }

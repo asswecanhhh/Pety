@@ -43,6 +43,7 @@ public class SalePro extends Activity {
 				loading.setVisibility(View.GONE);
 				saleProAdapter = new SaleProAdapter(SalePro.this,listItemsmain);
 				list.setAdapter(saleProAdapter);
+				saleProAdapter.notifyDataSetChanged();
 			} 
 		}
 	};
@@ -63,6 +64,33 @@ public class SalePro extends Activity {
 		MyToastBlue.makeText(this, "正在很努力的加载数据中..", Toast.LENGTH_LONG).show();
 
 
+		
+
+		back.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
+
+		ok.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent();
+				intent.setClass(SalePro.this,SaleProAdd.class);
+				startActivity(intent);
+			}
+		});
+	}
+	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
 		new Thread(new Runnable() {
 
 			@Override
@@ -70,6 +98,7 @@ public class SalePro extends Activity {
 				// TODO Auto-generated method stub
 				while(host == null);
 				Quer q = new Quer(getApplicationContext());
+				listPro.clear();
 				q.getSaleProduct(listPro, 20, 0);
 				while(listPro.size() == 0);
 				List<Map<String, Object>> listItems = new ArrayList<Map<String,Object>>();
@@ -95,25 +124,5 @@ public class SalePro extends Activity {
 
 			}
 		}).start();
-
-		back.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				finish();
-			}
-		});
-
-		ok.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent();
-				intent.setClass(SalePro.this,SaleProAdd.class);
-				startActivity(intent);
-			}
-		});
 	}
 }
