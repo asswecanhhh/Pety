@@ -10,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 public class NewPet extends Activity{
 	private EditText name;
@@ -21,6 +22,7 @@ public class NewPet extends Activity{
 	private EditText note;
 	private Button ok;
 	private Button back;
+	private ImageButton head;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -76,6 +78,15 @@ public class NewPet extends Activity{
 						finish();
 					}
 				}).start();
+			}
+		});
+		
+		head.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 	}

@@ -44,11 +44,15 @@
                 android:padding="20dp" >
 
                 <ImageButton
+                    android:id="@+id/newpet_head"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/ic_launcher" />
-
+				<TextView android:text="点击此处设置头像"
+				    android:gravity="center_horizontal"
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"/>
 
 
 

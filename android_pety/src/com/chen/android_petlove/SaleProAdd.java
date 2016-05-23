@@ -135,26 +135,34 @@ public class SaleProAdd extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				s  = new String[imageItem.size()-1];
-				for(int i = 0; i < imageItem.size()-1; i++ ) {
-					s[i] = (String) imageItem.get(i).get("path");
-				}
-
-				final Upload u = new Upload(SaleProAdd.this, s);
-				u.Commit();
-
-				new Thread(new Runnable() {
-
-					@Override
-					public void run() {
-						// TODO Auto-generated method stub
-						while(u.getUrls() == null);
-						s = u.getUrls();
-						Message msg = Message.obtain();
-						msg.what = 0x234;
-						handler.sendMessage(msg);
+				if(imageItem.size() == 1){
+					s = null;
+					Message msg = Message.obtain();
+					msg.what = 0x234;
+					handler.sendMessage(msg);
+				} else {
+					s  = new String[imageItem.size()-1];
+					for(int i = 0; i < imageItem.size()-1; i++ ) {
+						s[i] = (String) imageItem.get(i).get("path");
 					}
-				}).start();
+					
+					final Upload u = new Upload(SaleProAdd.this, s);
+					u.Commit();
+					
+					new Thread(new Runnable() {
+						
+						@Override
+						public void run() {
+							// TODO Auto-generated method stub
+							while(u.getUrls() == null);
+							s = u.getUrls();
+							Message msg = Message.obtain();
+							msg.what = 0x234;
+							handler.sendMessage(msg);
+						}
+					}).start();
+					
+				}
 
 
 				titles = title.getText().toString();
