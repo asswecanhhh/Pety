@@ -110,7 +110,7 @@ public class MyPetAdapter extends BaseAdapter {
 						.get("character"), (CharSequence) listItems.get(
 								position).get("age"), (CharSequence) listItems.get(
 										position).get("sex"), (CharSequence) listItems.get(
-												position).get("note")).show();
+												position).get("note"),(String[]) listItems.get(position).get("picId")).show();
 			}
 		});
 

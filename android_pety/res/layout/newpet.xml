@@ -45,10 +45,12 @@
 
                 <ImageButton
                     android:id="@+id/newpet_head"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/ic_launcher" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_launcher"
+                    android:background="#00FFFFFF" />
 				<TextView android:text="点击此处设置头像"
 				    android:gravity="center_horizontal"
 				    android:layout_width="match_parent"
